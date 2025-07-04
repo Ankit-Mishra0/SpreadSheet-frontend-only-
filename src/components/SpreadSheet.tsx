@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const SpreadSheet = ({ isHidden }: { isHidden: boolean }) => {
   const [priority, setPriority] = useState(Array(100).fill(""));
