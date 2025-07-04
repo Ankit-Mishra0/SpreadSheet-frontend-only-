@@ -30,7 +30,7 @@ const Navbar = () => {
             className="text-center outline-none"
           />
         </div>
-        <div>
+        <div onClick={()=>prompt("enter your name: ")} >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -7,7 +7,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
         <div
           onClick={() => {
             setToolBarOpen(!toolBaropen),
-              console.log(`toolBarOpen ${toolBaropen}`);
+              console.log(`toolBarOpen ${!toolBaropen}`);
           }}
           className="relative flex flex-row pr-1 h-[80%] border-r border-gray-300 text-sm hover:bg-gray-100 "
         >
@@ -49,7 +49,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
         )}
         <div
           onClick={() => {
-            setIsHidden(!isHidden), console.log(`{isHidden ${isHidden}}`);
+            setIsHidden(!isHidden), console.log(`{isHidden ${!isHidden}}`);
           }}
           className="flex flex-row gap-1 pr-1 pl-1 h-[80%]  text-sm  hover:bg-gray-100 "
         >
@@ -80,7 +80,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
           )}
           <span>Hide </span>
         </div>
-        <div className="flex flex-row gap-1 pr-1 pl-1 h-[80%] text-sm  hover:bg-gray-100">
+        <div onClick={()=>{alert("coming Soon.."),console.log("sorted")}} className="flex flex-row gap-1 pr-1 pl-1 h-[80%] text-sm  hover:bg-gray-100">
           <svg
             width="20"
             height="20"
@@ -96,7 +96,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
 
           <span>Sort </span>
         </div>
-        <div className="flex flex-row gap-1 pr-1 pl-1 h-[80%]  text-sm  hover:bg-gray-100">
+        <div onClick={()=>{alert("coming Soon.."),console.log("Filter")}} className="flex flex-row gap-1 pr-1 pl-1 h-[80%]  text-sm  hover:bg-gray-100">
           <svg
             width="20"
             height="20"
@@ -114,7 +114,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
         </div>
       </div>
       <div className="flex flex-row gap-2">
-        <div className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300">
+        <div onClick={()=>{alert("coming Soon.."),console.log("import")}}  className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300">
           <svg
             width="20"
             height="20"
@@ -129,7 +129,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
           </svg>
           <span className="pr-1">Import</span>
         </div>
-        <div className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300 ">
+        <div onClick={()=>{alert("coming Soon.."),console.log("export")}} className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300 ">
           <svg
             width="20"
             height="20"
@@ -145,7 +145,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
 
           <span className="pr-1">Export</span>
         </div>
-        <div className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300">
+        <div onClick={()=>{alert("coming Soon.."),console.log("share")}}  className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm hover:bg-slate-300">
           <svg
             width="20"
             height="20"
@@ -161,7 +161,7 @@ const TopBar = ({ isHidden, setIsHidden }: { isHidden: boolean; setIsHidden: (v:
 
           <span className="pr-1">Share</span>
         </div>
-        <div className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm bg-green-800 hover:bg-green-700">
+        <div onClick={()=>{alert("coming Soon.."),console.log("New Action")}} className="flex flex-row p-1 rounded-lg h-[80%] border border-gray-300 text-sm bg-green-800 hover:bg-green-700">
           <svg
             width="20"
             height="20"

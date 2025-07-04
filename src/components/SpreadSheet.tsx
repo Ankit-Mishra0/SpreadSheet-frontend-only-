@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 
-const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
+const SpreadSheet = ({ isHidden }: { isHidden: boolean }) => {
   const [priority, setPriority] = useState(Array(100).fill(""));
   const [status, setStatus] = useState(Array(100).fill(""));
+  const [jobDesc, setJobDesc] = useState(Array(100).fill(""));
+  const [submitDate, setSubmitDate] = useState(Array(100).fill(""));
+  const [dueDate, setDueDate] = useState(Array(100).fill(""));
+  const [submitter, setSubmitter] = useState(Array(100).fill(""));
+  const [url, setUrl] = useState(Array(100).fill(""));
+  const [assigned, setAssigned] = useState(Array(100).fill(""));
+  const [estValue, setEstValue] = useState(Array(100).fill(""));
   const rows = Array.from({ length: 100 });
 
   return (
@@ -274,7 +281,7 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
         </div>{" "}
         <div className="col-span-2 flex items-center bg-white h-10 border border-gray-200 border-dotted"></div>
       </div>
-      <div className={isHidden ? "hidden":""}>
+      <div className={isHidden ? "hidden" : ""}>
         {rows.map((_, rowIndex) => (
           <div
             key={rowIndex}
@@ -290,16 +297,33 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
             </div>
 
             <div className="col-span-4 border border-gray-200">
-              <input className="h-10 outline-green-500 w-full px-2" type="text" />
+              <input
+                className="h-10 outline-green-500 w-full px-2"
+                type="text"
+                value={jobDesc[rowIndex] || ""}
+                onChange={(e) => {
+                  const updated = [...jobDesc];
+                  updated[rowIndex] = e.target.value;
+                  setJobDesc(updated);
+                  console.log(updated);
+                }}
+              />
             </div>
 
             <div className="col-span-2 border border-gray-200">
               <input
                 type="text"
                 className="h-10 outline-green-500 w-full px-2"
+                value={submitDate[rowIndex] || ""}
                 onFocus={(e) => (e.target.type = "date")}
                 onBlur={(e) => {
                   if (!e.target.value) e.target.type = "text";
+                }}
+                onChange={(e) => {
+                  const updated = [...submitDate];
+                  updated[rowIndex] = e.target.value;
+                  setSubmitDate(updated);
+                  console.log(updated);
                 }}
               />
             </div>
@@ -322,6 +346,7 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
                   const updated = [...status];
                   updated[rowIndex] = e.target.value;
                   setStatus(updated);
+                  console.log(updated);
                 }}
               >
                 <option value=""></option>
@@ -333,15 +358,42 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
             </div>
 
             <div className="col-span-2 border border-gray-200">
-              <input className="h-10 outline-green-500 w-full px-2" type="text" />
+              <input
+                className="h-10 outline-green-500 w-full px-2"
+                type="text"
+                value={submitter[rowIndex] || ""}
+                onChange={(e) => {
+                  const updated = [...submitter];
+                  updated[rowIndex] = e.target.value;
+                  setSubmitter(updated);
+                }}
+              />
             </div>
 
             <div className="col-span-2 border border-gray-200">
-              <input className="h-10 outline-green-500 w-full px-2" type="url" />
+              <input
+                className="h-10 outline-green-500 w-full px-2"
+                type="url"
+                value={url[rowIndex] || ""}
+                onChange={(e) => {
+                  const updated = [...url];
+                  updated[rowIndex] = e.target.value;
+                  setUrl(updated);
+                }}
+              />
             </div>
 
             <div className="col-span-2 border border-gray-200">
-              <input className="h-10 outline-green-500 w-full px-2" type="text" />
+              <input
+                className="h-10 outline-green-500 w-full px-2"
+                type="text"
+                value={assigned[rowIndex] || ""}
+                onChange={(e) => {
+                  const updated = [...assigned];
+                  updated[rowIndex] = e.target.value;
+                  setAssigned(updated);
+                }}
+              />
             </div>
 
             <div className="col-span-2 border border-gray-200">
@@ -361,6 +413,7 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
                   const updated = [...priority];
                   updated[rowIndex] = e.target.value;
                   setPriority(updated);
+                  console.log(updated);
                 }}
               >
                 <option value=""></option>
@@ -374,15 +427,30 @@ const SpreadSheet = ({ isHidden }:{isHidden:boolean}) => {
               <input
                 type="text"
                 className="h-10 outline-green-500 w-full px-2"
+                value={dueDate[rowIndex] || ""}
                 onFocus={(e) => (e.target.type = "date")}
                 onBlur={(e) => {
                   if (!e.target.value) e.target.type = "text";
+                }}
+                onChange={(e) => {
+                  const updated = [...dueDate];
+                  updated[rowIndex] = e.target.value;
+                  setDueDate(updated);
                 }}
               />
             </div>
 
             <div className="col-span-2 border border-gray-200 flex justify-between items-center">
-              <input className="h-10 outline-green-500 w-full px-2" type="number" />
+              <input
+                className="h-10 outline-green-500 w-full px-2"
+                type="number"
+                value={estValue[rowIndex] || ""}
+                onChange={(e) => {
+                  const updated = [...estValue];
+                  updated[rowIndex] = e.target.value;
+                  setEstValue(updated);
+                }}
+              />
               <span className="text-gray-400">₹</span>
             </div>
 
