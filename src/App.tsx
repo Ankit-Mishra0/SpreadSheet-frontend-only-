@@ -1,18 +1,16 @@
 import Navbar from "./components/Navbar.tsx";
-import Details from "./components/Details.tsx";
 import TopBar from "./components/TopBar.tsx";
-import TableHeader from "./components/tableHeader.tsx";
 import SpreadSheet from "./components/SpreadSheet.tsx";
+import React, { useState } from "react";
 
 function App() {
+   const [isHidden, setIsHidden] = useState(false);
   return (
     <>
       <Navbar />
-      <TopBar />
-      <Details />
-      <TableHeader />
-      <SpreadSheet />
-      </>
+      <TopBar  isHidden={isHidden} setIsHidden={setIsHidden}/>
+      <SpreadSheet isHidden={isHidden}/>
+    </>
   );
 }
 
