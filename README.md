@@ -1,5 +1,8 @@
 # Frontend-Only Spreadsheet (React + TypeScript + Vite)
 
+**Live Demo:** [spread-sheet-frontend-only-voo5.vercel.app](https://spread-sheet-frontend-only-voo5.vercel.app)  
+**GitHub Repo:** [https://github.com/Ankit-Mishra0/SpreadSheet-frontend-only-](https://github.com/Ankit-Mishra0/SpreadSheet-frontend-only-)
+
 This project is a **frontend-only spreadsheet** built with React, TypeScript, and Vite.  
 There is **no backend connection**—all data is managed in the browser and not persisted.
 
